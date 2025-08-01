@@ -1,0 +1,750 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+    Puri screen pe ek fixed image background lag raha hai 
+    jo center pe position hoga, repeat nahi hoga, aur cover karega.
+    */
+.back {
+    background-image: url("./images/image8.jpg");
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    /* color: #0c0c0c; */
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.nav-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* navbar ka kam ha yahan */
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 30px 40px 0 90px;
+
+}
+
+.logo {
+    /* display: inline-block; */
+    font-family: 'Dancing Script', cursive;
+    /* margin: 60px; */
+}
+
+.logo span {
+    font-size: 42px;
+    color: #ffffff;
+}
+
+.navbar-items {
+    margin: 0 auto;
+}
+
+.navbar-items ul {
+    display: flex;
+
+}
+
+.navbar-items ul li {
+    list-style: none;
+    /* margin-left: 200px; */
+}
+
+.navbar-items ul li a {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0 20px;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+}
+
+.navbar-items ul li a:hover {
+    color: #ffbe33;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icona {
+    font-size: 25px;
+    margin-right: 20px;
+    color: #ffffff;
+}
+
+.button {
+    font-size: 20px;
+    padding: 13px 39px;
+    color: white;
+    margin-right: 60px;
+    text-decoration: none;
+    background-color: #ffbe33;
+    border-radius: 45px;
+    cursor: pointer;
+}
+
+
+/* Ye Swiper slider ka kam keya ha
+*/
+.swiper {
+    width: 100%;
+    position: absolute;
+    top: 5px;
+    z-index: 10;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: flex-start;
+    padding: 80px;
+    color: white;
+}
+
+
+/* .detail{
+    position: absolute;
+    top: 15%;
+    margin: 80px;
+    padding: 80px;
+    color: #ffffff;
+ } */
+
+.detail h1 {
+    font-size: 70px;
+    margin-bottom: 25px;
+    line-height: 1;
+    font-family: "Dancing Script", system-ui;
+    color: #ffffff;
+}
+
+.detail p {
+    max-width: 660px;
+    font-size: 19px;
+    margin-bottom: 60px;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+.btn {
+    font-size: 20px;
+    padding: 16px 55px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ffbe33;
+    /* border: 1px solid black; */
+    border-radius: 45px;
+}
+
+.offer_section {
+    position: relative;
+    padding-top: 45px;
+}
+
+.offer {
+    display: flex;
+
+}
+
+/* Offer section ke cards  banaya ha yahan par */
+.offer_one {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 30px 50px;
+    max-width: 900px;
+    width: 45%;
+    gap: 40px;
+    margin: 50px auto;
+    background-color: #222831;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+
+}
+
+.card_image {
+    /* display: inline-flex; */
+    width: 200px;
+    height: 200px;
+    border: 8px solid #ffbe33;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_image img {
+    /* max-width: 200px;
+    border-radius: 100%;
+    border: 8px solid #ffbe33;
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease-in ease-out; */
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card_image img:hover {
+    transform: scale(1.12);
+}
+
+.card_content h5 {
+    font-family: "Dancing Script", cursive;
+    font-size: 40px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.card_content h6 {
+    font-family: "Dancing Script", cursive;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.card_content span {
+    font-family: "Dancing Script", cursive;
+    font-size: 35px;
+    color: #ffffff;
+}
+
+button {
+    display: inline-block;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 10px 25px;
+    margin-top: 10px;
+    background-color: #ffbe33;
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.offer_two {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 30px 50px;
+    max-width: 900px;
+    width: 45%;
+    gap: 40px;
+    margin: 50px auto;
+    background-color: #222831;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+}
+
+.menu_box {
+    text-align: center;
+    padding: 20px 40px;
+}
+
+.menu_box .text h1 {
+    position: relative;
+    font-size: 40px;
+    color: #222;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    font-family: "Dancing Script", cursive;
+}
+
+.filters_menu ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.filters_menu ul li a {
+    display: block;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    color: #0c0c0c;
+}
+
+.filters_menu ul li a:hover {
+    background-color: #e49e00;
+}
+
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #fdfdfd;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
+    padding: 40px 80px;
+    gap: 100px;
+
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 420px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(12, 12, 12);
+}
+
+.cards_image {
+    width: 100%;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 0 0 0 45px;
+    background-color: rgb(220, 219, 219);
+}
+
+.cards_image img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    padding: 40px;
+    border-radius: 0 0 0 45px;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+.cards_image img:hover {
+    transform: scale(1.12);
+}
+
+.card_detail {
+    /* text-align:start; */
+    padding: 30px;
+    margin-top: 15px;
+    flex-grow: 1;
+}
+
+.card_detail h1 {
+    font-size: 25px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.card_detail p {
+    font-size: 20px;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
+.price {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price h1 {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.icona {
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.card-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+}
+
+.card-btn .cta {
+    font-size: 20px;
+    padding: 15px 55px;
+    color: #ffffff;
+    background-color: #ffbe33;
+    text-decoration: none;
+    border-radius: 45px;
+    display: inline-block;
+
+}
+
+.about {
+    background-color: #222831;
+    color: #ffffff;
+    margin-top: 90px;
+    padding: 70px 30px;
+}
+
+.about-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 30px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+}
+
+.about-detail {
+    max-width: 700px;
+    padding: 10px;
+    text-align: justify;
+}
+
+.about-detail h1 {
+    font-size: 60px;
+    margin-bottom: 25px;
+    line-height: 1;
+    font-family: "Dancing Script", system-ui;
+
+}
+
+.about-detail p {
+    font-size: 19px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.about-detail button {
+    padding: 15px 40px;
+    cursor: pointer;
+}
+
+.contact-card {
+    color: #ffffff;
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+
+.contact {
+    padding: 40px 60px;
+}
+
+.contact-card {
+    max-width: 800px;
+    padding: 10px;
+    display: flex;
+    gap: 40px;
+}
+
+.contact-card-heading h1 {
+    color: #0c0c0c;
+    width: 100%;
+    font-size: 50px;
+    margin-top: 60px;
+    font-family: "Dancing Script", system-ui;
+}
+
+.contact-card-input {
+    flex: 1;
+    min-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-card-input input,
+.contact-card-input select {
+    padding: 20px 17px;
+    font-size: 19px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.about-card-image {
+    flex: 1;
+    min-width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-card-image iframe {
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    min-height: 300px;
+
+}
+
+.contact-card-input button {
+    width: 35%;
+    padding: 16px 1px;
+    cursor: pointer;
+    border: 1px solid #e49e00;
+    text-transform: uppercase;
+}
+
+.testimonial {
+    padding: 40px 60px;
+}
+
+.testimonial-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-heading h1 {
+    position: relative;
+    font-size: 3rem;
+    font-family: "Dancing Script", system-ui;
+    margin-bottom: 35px;
+}
+
+.testimonial-cards-container {
+    display: flex;
+    max-width: 1800px;
+}
+
+.testimonial-card-container{}
+
+.testimonial-card-heading-one {
+    background-color: #222831;
+    width: 95%;
+    padding: 35px 30px;
+
+}
+
+.testimonial-card-heading-one h1 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.testimonial-card-heading-one p {
+    font-size: 20px;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+
+.testimonial-image-one {
+    /* width: 100%;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    right: 25%;
+    overflow: hidden;
+    border-radius: 45%;
+    border: 3px solid #e49e00; */
+    height: 100px;
+    width: 100px;
+    border: 8px solid #ffbe33;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.testimonial-image-one img {
+    /* width: 80%;
+    height: 70%;
+    object-fit: contain;
+    padding: 20px;
+    border-radius: 0 0 0 45px; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.arrow {
+    position: relative;
+    width: fit-content;
+    margin: 0
+}
+
+.arrow-up {
+    position: absolute;
+    top: -12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #ffbe33;
+}
+
+/* 
+.testimonial-card-heading-two{
+    background-color: #222831;
+    height: 40%;
+    width: 90%;
+} */
+
+
+
+/* Footer ke 3 columns banae han yahan par */
+.footer-section {
+    background-color: #222831;
+    color: #ffffff;
+    padding: 75px 0 40px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.column {
+    width: calc(33.33% - 30px);  
+    /*  Pehle 33.33% space le ga  or Har box ke andar left aur right padding already 15px 15px hai (total 30px). */
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+
+.contacts h4
+ {
+    text-align: left;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: #ffbe33;
+}
+
+.links i {
+    width: 25px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Center Column */
+.details .logo{
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.details p {
+    text-align: center;
+    color: #dbdbdb;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #222831;
+    margin: 20px 5px 0 5px;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+.social a i{
+    font-size: 26px;
+}
+
+.columns {
+    width: calc(33.33% - 30px);
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.columns h4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.columns p {
+    text-align: center;
+    color: #dbdbdb;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    margin: 5px 0;
+}
+
+
+.copyright {
+    
+    margin-top: 25px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.copyright p {
+    color: #dbdbdb;
+    font-size: 20px;
+    margin: 20px 0;
+    padding: 0;
+}
