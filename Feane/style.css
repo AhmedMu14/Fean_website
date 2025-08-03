@@ -21,11 +21,15 @@ body {
     font-family: "Open Sans", sans-serif;
     /* color: #0c0c0c; */
     background-color: #ffffff;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+    /* Jab kisi element ke andar ka content bahar nikal raha ho (yaani size se zyada ho raha ho), to overflow: hidden use karte hain */
 }
 
 .nav-wrapper {
     flex: 1;
+    /* Div main sara available space le le 
+flex-shrink batata ha ke Kitna chhota ho sakta hai
+flex-grow batata ha Kitna bara ho sakta hai*/
     display: flex;
     justify-content: flex-start;
 }
@@ -33,6 +37,10 @@ body {
 /* navbar ka kam ha yahan */
 .navbar {
     display: flex;
+    /*  Navbar chahye spaced items ke sath to display: flex
+        Badges (icon + text) ik line main cahye to display: inline-flex
+        3 buttons side-by-side  cahye to display: inline-block
+        Blog content area  display: block */
     align-items: center;
     background-color: transparent;
     padding: 30px 40px 0 90px;
@@ -82,6 +90,14 @@ body {
     align-items: center;
 }
 
+
+.ico {
+    display: none;
+    font-size: 25px;
+    margin-right: 20px;
+    color: #ffffff;
+}
+
 .icona {
     font-size: 25px;
     margin-right: 20px;
@@ -99,6 +115,93 @@ body {
     cursor: pointer;
 }
 
+
+/* Sidebar */
+.Sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 48vh;
+    width: 360px;
+    z-index: 999;
+    background-color: #0c0c0c;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-sidebar {
+    position: relative;
+    width: 20px;
+}
+
+.logo-sidebar span {
+    position: absolute;
+    right: 100px;
+    color: #ffffff;
+    font-size: 29px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.navbar-items-sidebar {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.cross-icon {
+    position: relative;
+}
+
+.cross-icon i {
+    position: absolute;
+    color: #ffffff;
+    font-size: 30px;
+    top: 10px;
+    left: 170px;
+}
+
+.navbar-items-sidebar li {
+    /* width: 100%; */
+    list-style: none;
+    margin-top: 30px;
+}
+
+.navbar-items-sidebar li a {
+    width: 10%;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.icons-sidebar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 40px;
+
+}
+
+.icons-sidebar i {
+    font-size: 20px;
+}
+
+.icons-sidebar .button {
+    font-size: 15px;
+    padding: 10px 16px;
+    margin: 10px;
+    width: 90%;
+    text-align: center;
+}
+
+/* .icons-sidebar a .button{
+    font-size: 1rem;
+    padding: 13px 16px;
+    width: 90%;
+    text-align: center;
+} */
 
 /* Ye Swiper slider ka kam keya ha
 */
@@ -178,7 +281,7 @@ body {
 }
 
 .card_image {
-    /* display: inline-flex; */
+    display: inline-flex;
     width: 200px;
     height: 200px;
     border: 8px solid #ffbe33;
@@ -227,8 +330,7 @@ body {
     color: #ffffff;
 }
 
-button {
-    display: inline-block;
+.card_content button {
     /* justify-content: center; */
     align-items: center;
     padding: 10px 25px;
@@ -269,35 +371,31 @@ button {
     font-family: "Dancing Script", cursive;
 }
 
-.filters_menu ul {
+.filters_menu {
     display: flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 20px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
 }
 
-.filters_menu ul li a {
-    display: block;
+.filters_menu button {
+    margin: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: #ffffff;
     font-size: 20px;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    color: #0c0c0c;
 }
 
-.filters_menu ul li a:hover {
+.filters_menu button:hover {
+    border-radius: 20px;
+    padding: 12px;
     background-color: #e49e00;
 }
-
 
 .cards {
     display: flex;
     flex-wrap: wrap;
+    /* 1 se zyada boxes ha or woh ek line mein fit nahi ho rahe to flex wrap se jo box line main nahi a rahe woh next line main a jaen ga  */
     gap: 20px;
     justify-content: center;
     padding: 40px 20px;
@@ -305,17 +403,17 @@ button {
 }
 
 .product {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
-    padding: 40px 80px;
-    gap: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    /* 1 se zyada boxes ha or woh ek line mein fit nahi ho rahe to flex wrap se jo box line main nahi a rahe woh next line main a jaen ga  */
+    justify-content: center;
+    padding: 40px 20px;
+    gap: 30px;
 
 }
 
 .card {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* background-color: #fff; */
     width: 420px;
     height: 100%;
     display: flex;
@@ -431,7 +529,7 @@ button {
 .about-detail {
     max-width: 700px;
     padding: 10px;
-    text-align: justify;
+    text-align: start;
 }
 
 .about-detail h1 {
@@ -449,25 +547,25 @@ button {
 }
 
 .about-detail button {
+    align-items: center;
     padding: 15px 40px;
-    cursor: pointer;
-}
-
-.contact-card {
+    margin-top: 10px;
+    background-color: #ffbe33;
     color: #ffffff;
-    margin-top: 20px;
-    padding: 10px 20px;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
 .contact {
     padding: 40px 60px;
 }
 
-.contact-card {
-    max-width: 800px;
-    padding: 10px;
-    display: flex;
-    gap: 40px;
+.contact-card-heading {
+    color: #ffffff;
+    margin-top: 20px;
+    padding: 10px 20px;
 }
 
 .contact-card-heading h1 {
@@ -478,8 +576,15 @@ button {
     font-family: "Dancing Script", system-ui;
 }
 
+.contact-card {
+    max-width: 800px;
+    padding: 10px;
+    display: flex;
+    gap: 40px;
+}
+
 .contact-card-input {
-    flex: 1;
+    /* flex: 1; */
     min-width: 700px;
     display: flex;
     flex-direction: column;
@@ -495,6 +600,18 @@ button {
     border: 1px solid #ccc;
 }
 
+.contact-card-input button {
+    align-items: center;
+    padding: 10px 25px;
+    margin-top: 10px;
+    background-color: #ffbe33;
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
 .about-card-image {
     flex: 1;
     min-width: 700px;
@@ -508,7 +625,6 @@ button {
     height: 100%;
     max-width: 900px;
     min-height: 300px;
-
 }
 
 .contact-card-input button {
@@ -540,8 +656,6 @@ button {
     display: flex;
     max-width: 1800px;
 }
-
-.testimonial-card-container{}
 
 .testimonial-card-heading-one {
     background-color: #222831;
@@ -599,7 +713,7 @@ button {
 
 .arrow {
     position: relative;
-    width: fit-content;
+    width: 14%;
     margin: 0
 }
 
@@ -623,80 +737,88 @@ button {
 } */
 
 
-
-/* Footer ke 3 columns banae han yahan par */
-.footer-section {
+.footer {
+    padding: 60px 100px;
     background-color: #222831;
-    color: #ffffff;
-    padding: 75px 0 40px 0;
-    text-align: center;
 }
 
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.row {
+.footer-detail {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+
 }
 
-.column {
-    width: calc(33.33% - 30px);  
-    /*  Pehle 33.33% space le ga  or Har box ke andar left aur right padding already 15px 15px hai (total 30px). */
-    padding: 0 15px;
-    margin-bottom: 30px;
-}
-
-
-.contacts h4
- {
-    text-align: left;
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.links a {
+.contactUs {
     display: flex;
     align-items: center;
-    margin: 15px 0;
-    color: #ffffff;
-    text-decoration: none;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.links a:hover {
+.contactUs h1 {
+    align-items: center;
+    font-size: 25px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-family: "Dancing Script", cursive;
+}
+
+.contactus-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    color: #ffffff;
+}
+
+.contactUs i {
+    display: flex;
+    font-size: 20px;
+    gap: 10px;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+.contactUs i:hover {
     color: #ffbe33;
+    cursor: pointer;
 }
 
-.links i {
-    width: 25px;
-    margin-right: 10px;
-    font-size: 1.2rem;
+.logoclass {
+    flex-direction: column;
+    max-width: 700px;
+    /* padding: 30px; */
 }
 
-/* Center Column */
-.details .logo{
-    color: #ffffff;
-    text-decoration: none;
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-.details p {
+.logos {
     text-align: center;
-    color: #dbdbdb;
-    font-size: 1.3rem;
-    line-height: 1.5;
-    margin-top: 10px;
 }
 
-.social a {
+.logos a {
+    text-decoration: none;
+    font-size: 35px;
+    font-family: "Dancing Script", cursive;
+    color: #ffffff;
+}
+
+.logos p {
+    margin-top: 20px;
+    font-size: 21px;
+    color: #ffffff;
+    max-width: 490px;
+    line-height: 1.4;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social a {
+    /* color: #ffffff;
+    text-decoration: none; */
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -705,46 +827,288 @@ button {
     border-radius: 50%;
     background-color: #ffffff;
     color: #222831;
-    margin: 20px 5px 0 5px;
-    transition: background-color 0.3s, color 0.3s;
+    margin: 20px 4px;
     text-decoration: none;
 }
 
-.social a i{
+.footer-social a i {
     font-size: 26px;
 }
 
-.columns {
-    width: calc(33.33% - 30px);
-    padding: 0 15px;
+.footer-social a i:hover {
+    color: #ffbe33;
+}
+
+.timingclass {
+    flex-direction: column;
+    gap: 30px;
+}
+
+.timingclass h1 {
+    align-items: center;
+    font-size: 25px;
+    color: #ffffff;
     margin-bottom: 30px;
+    font-family: "Dancing Script", cursive;
 }
 
-.columns h4 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.timing {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.columns p {
+.timing-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.timingclass p {
+    margin-top: 5px;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.footer-info {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    color: #dbdbdb;
-    font-size: 1.3rem;
-    line-height: 1.3;
-    margin: 5px 0;
+    margin-top: 40px;
 }
 
-
-.copyright {
-    
-    margin-top: 25px;
-    padding-top: 30px;
-    text-align: center;
-}
-
-.copyright p {
-    color: #dbdbdb;
+.footer-info p {
+    color: #ffffff;
+    line-height: 3;
     font-size: 20px;
-    margin: 20px 0;
-    padding: 0;
+}
+
+
+@media (max-width: 400px) {
+
+    .hide {
+        display: none;
+    }
+
+    .ico {
+        display: flex;
+    }
+
+    .logo {
+        position: absolute;
+        left: 19px;
+    }
+
+    .Sidebar {
+        width: 100%;
+    }
+
+
+
+    /* .back{
+        width: 110%;
+        height: auto;
+    }
+    .navbar{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-items ul{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .icons{
+        margin-top: 10px;
+    }
+
+    .button{
+        
+        display: block;
+        margin: 10px auto;
+    } */
+
+
+    .swiper-slide {
+        padding: 20px;
+        text-align: left;
+    }
+
+    .swiper-slide h1 {
+        max-width: 200px;
+        font-size: 50px;
+        line-height: 3.9rem;
+        margin-top: 2rem;
+    }
+
+    .swiper-slide p {
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+        max-width: 390px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 15px 60px;
+        font-size: 1.3rem;
+        margin-top: 10px;
+    }
+
+    .swiper {
+        padding-bottom: 40px;
+        /* space for pagination dots */
+    }
+
+
+    .offer {
+        display: block;
+    }
+
+    .offer_one {
+        display: block;
+        width: 88%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .card_content h5 {
+        font-size: 1.7rem;
+    }
+
+    .card_content button {
+        font-size: 1.2rem;
+        padding: 15px 20px;
+    }
+
+
+    .offer_two {
+        display: block;
+        width: 88%;
+        text-align: center;
+    }
+
+    .filters_menu {
+        display: block;
+    }
+
+    .filters_menu button {
+        align-items: center;
+    }
+
+
+    .about-card {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .about-detail h1 {
+        font-size: 3rem;
+    }
+
+    .contact {
+        padding: 20px;
+    }
+
+    .contact-card {
+        display: block;
+        /* padding: 0; */
+        gap: 20px;
+    }
+
+    .contact-card-heading h1 {
+        font-size: 2rem;
+    }
+
+    .contact-card-input {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .about-card-image {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .contact-card-input input,
+    .contact-card-input select {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .contact-card-input button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .about-card-image iframe {
+        height: 200px;
+        min-height: 0;
+    }
+
+    .testimonial {
+    padding: 20px;
+  }
+
+  .testimonial-heading h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .testimonial-cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .testimonial-card-one {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .testimonial-card-heading-one {
+    padding: 25px 20px;
+    width: 100%;
+  }
+
+  .testimonial-card-heading-one h1 {
+    font-size: 1rem;
+  }
+
+  .testimonial-card-heading-one p{
+    font-size: 1rem;
+  }
+  .testimonial-image-one {
+    width: 80px;
+    height: 80px;
+    margin: 20px auto 0 auto;
+  }
+
+  .testimonial-image-one img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .arrow {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    right: 100px;
+  }
+
+  .arrow-up {
+    margin-top: 20px;
+  }
 }

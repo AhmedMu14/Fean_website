@@ -7,6 +7,7 @@
     <title>Feane</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/fontawesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> <!--- swiper slider link-->
 </head>
@@ -38,29 +39,63 @@
         <a href="" class="button">Order Online</a>
     </div> -->
     <section class="back">
+
+
+        <div class="Sidebar">
+             <div class="logo-sidebar">
+                <span>Feane</span>
+            </div>
+
+                <div class="navbar-items-sidebar">
+                    <div class="cross-icon">
+                        <i onclick=hideSidebar() class="ri-close-line"></i>
+
+                    </div>
+                    <ul>
+                        <li><a href="#Home">HOME</a></li>
+                        <li><a href="#Menu">MENU</a></li>
+                        <li><a href="#About">ABOUT</a></li>
+                        <li><a href="#Book">BOOK TABLE</a></li>
+
+                    </ul>
+                    </div>
+                
+
+            <div class="icons-sidebar">
+                <i class="ri-user-fill icona"></i>
+                <i class="ri-shopping-cart-2-fill icona"></i>
+                <i class="ri-search-2-line icona"></i>
+                <a href="" class="button">Order Online</a>
+            </div>
+        
+        </div>
+
+        
         <div class="navbar">
             <div class="logo">
                 <span>Feane</span>
             </div>
-
-            <div class="nav-wrapper">
+ 
+            <div class="nav-wrapper"> 
                 <div class="navbar-items">
                     <ul>
-                        <li> <a href="#Home">HOME</a></li>
-                        <li><a href="#">MENU</a></li>
-                        <li> <a href="#">ABOUT</a></li>
-                        <li><a href="#">BOOK TABLE</a></li>
+                        <li class="hide"><a href="#Home">HOME</a></li>
+                        <li class="hide"><a href="#Menu">MENU</a></li>
+                        <li class="hide"><a href="#About">ABOUT</a></li>
+                        <li class="hide"><a href="#Book">BOOK TABLE</a></li>
 
                     </ul>
                 </div>
             </div>
 
             <div class="icons">
-                <i class="ri-user-fill icona"></i>
-                <i class="ri-shopping-cart-2-fill icona"></i>
-                <i class="ri-search-2-line icona"></i>
+                <i class="ri-user-fill icona hide"></i>
+                <i class="ri-shopping-cart-2-fill icona hide"></i>
+                <i class="ri-search-2-line icona hide"></i>
+                <a href="" class="button hide">Order Online</a>
+                <i onclick=showSidebar() class="ri-menu-line ico"></i>
             </div>
-            <a href="" class="button">Order Online</a>
+            
         </div>
 
         <div class="swiper mySwiper">
@@ -140,23 +175,26 @@
         </div>
     </section>
 
+
+
+
     <section class="menu">
         <div class="menu_box">
             <div class="text">
                 <h1>Our Menu</h1>
             </div>
             <div class="filters_menu">
-                <ul>
-                    <li><a href="">All</a></li>
-                    <li><a href="">Burger</a></li>
-                    <li><a href="">Pizza</a></li>
-                    <li><a href="">Pasta</a></li>
-                    <li><a href="">Fries</a></li>
-                </ul>
+                <button id="all_btn">All</button>
+                <button id="burger">Burger</button>
+                <button id="pizza">Pizza</button>
+                <button id="pasta">Pasta</button>
+                <button id="fries">Fries</button>
             </div>
         </div>
         <div class="product">
-            <div class="card">
+
+            <!-- Pizza -->
+            <div class="card all_item pizza">
                 <div class="cards_image">
                     <img src="images/image14.png" alt="pizza">
                 </div>
@@ -169,10 +207,10 @@
                     <h1>$20</h1>
                     <i class="ri-shopping-cart-2-fill icona"></i>
                 </div>
-            </div>      
+            </div>
 
-
-            <div class="card">
+            <!-- fries -->
+            <div class="card all_item fries">
                 <div class="cards_image">
                     <img src="images/image10.png" alt="pizza">
                 </div>
@@ -187,8 +225,8 @@
                 </div>
             </div>
 
-
-            <div class="card">
+            <!-- Zinger -->
+            <div class="card all_item burger">
                 <div class="cards_image">
                     <img src="images/image7.png" alt="pizza">
                 </div>
@@ -203,8 +241,8 @@
                 </div>
             </div>
 
-
-            <div class="card">
+            <!-- pizza -->
+            <div class="card all_item pizza">
                 <div class="cards_image">
                     <img src="images/image6.png" alt="pizza">
                 </div>
@@ -219,8 +257,8 @@
                 </div>
             </div>
 
-
-            <div class="card">
+            <!-- pizza -->
+            <div class="card all_item pizza">
                 <div class="cards_image">
                     <img src="images/image1.png" alt="pizza">
                 </div>
@@ -235,8 +273,8 @@
                 </div>
             </div>
 
-
-            <div class="card">
+            <!-- pasta -->
+            <div class="card all_item pasta">
                 <div class="cards_image">
                     <img src="images/imag15.png" alt="pizza">
                 </div>
@@ -251,8 +289,8 @@
                 </div>
             </div>
 
-
-            <div class="card">
+            <!-- burger -->
+            <div class="card all_item burger">
                 <div class="cards_image">
                     <img src="images/image013.png" alt="pizza">
                 </div>
@@ -267,8 +305,8 @@
                 </div>
             </div>
 
-
-            <div class="card">
+            <!-- burger -->
+            <div class="card all_item burger">
                 <div class="cards_image">
                     <img src="images/imag12.png" alt="pizza">
                 </div>
@@ -283,8 +321,8 @@
                 </div>
             </div>
 
-
-            <div class="card">
+            <!-- pizza -->
+            <div class="card all_item pizza">
                 <div class="cards_image">
                     <img src="images/image14.png" alt="pizza">
                 </div>
@@ -299,12 +337,15 @@
                 </div>
             </div>
         </div>
+
+
+
         <div class="card-btn">
             <a href="#" class="cta">View More
             </a>
         </div>
     </section>
-
+    
     <section class="about">
         <div class="about-card">
             <div class="about-image">
@@ -355,106 +396,102 @@
         </div>
     </section>
 
-<section class="testimonial">
-    <div class="testimonial-heading">
-        <h1>What Says Our Customers</h1>
-    </div>
-
-    <div class="testimonial-cards-container">
-        <div class="testimonial-card-one">
-            <div class="testimonial-card-heading-one">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam
-                </p>
-                <h1>Moana Michell</h1>
-                <p>magna aliqua</p>
-            </div>
-
-            <div class="arrow">
-                <div class="arrow-up"></div>
-                <div class="testimonial-image-one">
-                    <img src="images/imag11.jpg" alt="">
-                </div>
-            </div>
+    <section class="testimonial">
+        <div class="testimonial-heading">
+            <h1>What Says Our Customers</h1>
         </div>
 
-        <div class="testimonial-card-one">
-            <div class="testimonial-card-heading-one">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam
-                </p>
-                <h1>Moana Michell</h1>
-                <p>magna aliqua</p>
-            </div>
-
-            <div class="arrow">
-                <div class="arrow-up"></div>
-                <div class="testimonial-image-one">
-                    <img src="images/image2.jpg" alt="">
+        <div class="testimonial-cards-container">
+            <div class="testimonial-card-one">
+                <div class="testimonial-card-heading-one">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam
+                    </p>
+                    <h1>Moana Michell</h1>
+                    <p>magna aliqua</p>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-
-
-<footer>
-    <div class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="column">
-                    <div class="contacts">
-                    <h4>Contact us</h4>
-                    <div class="links">
-                        <a href="#">
-                            <i class="ri-map-pin-line"></i>
-                                <span>Location</span>
-                            </a>
-
-                            <a href="tel:+011234567890">
-                                <i class="ri-phone-line"></i>
-                                <span>Call +01 1234567890</span>
-                            </a>
-
-                            <a href="mailto:demo@gmail.com">
-                                <i class="ri-mail-line"></i>
-                                <span>demo@gmail.com</span>
-                            </a>
+                <div class="arrow">
+                    <div class="arrow-up"></div>
+                    <div class="testimonial-image-one">
+                        <img src="images/imag11.jpg" alt="">
                     </div>
                 </div>
             </div>
 
-            <div class="column">
-                    <div class="details">
-                        <a href="#" class="logo">Feane</a>
+            <div class="testimonial-card-one">
+                <div class="testimonial-card-heading-one">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam
+                    </p>
+                    <h1>Moana Michell</h1>
+                    <p>magna aliqua</p>
+                </div>
+
+                <div class="arrow">
+                    <div class="arrow-up"></div>
+                    <div class="testimonial-image-one">
+                        <img src="images/image2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-detail">
+                <div class="contactUs">
+                    <h1>Contact Us</h1>
+                    <div class="contactus-link">
+                        <i class="ri-map-pin-line">Location</i>
+                        <i class="ri-phone-line">Call +01 1234567890</i>
+                        <i class="ri-mail-line">demo@gmail.com</i>
+                    </div>
+                </div>
+
+                <div class="logoclass">
+                    <div class="logos">
+                        <a href="#">Feane</a>
                         <p>
-                            Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+                            Necessary, making this the first true generator on the Internet. It uses a dictionary of
+                            over
+                            200 Latin words, combined with
                         </p>
-                        <div class="social">
-                            <a href="#"><i class="ri-facebook-fill"></i></a>
-                            <a href="#"><i class="ri-twitter-fill"></i></a>
-                            <a href="#"><i class="ri-instagram-fill"></i></a>
-                            <a href="#"><i class="ri-linkedin-fill"></i></a>
-                            <a href="#"><i class="ri-pinterest-fill"></i></a>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                        <a href="#"><i class="ri-twitter-fill"></i></a>
+                        <a href="#"><i class="ri-instagram-fill"></i></a>
+                        <a href="#"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#"><i class="ri-pinterest-fill"></i></a>
+
+                    </div>
+                </div>
+
+                <div class="timingclass">
+                    <div class="timing">
+                        <h1>Opening Hours</h1>
+                        <div class="timing-detail">
+                            <p>Everyday</p>
+                            <p>10.00 Am - 10.00 Pm</p>
                         </div>
                     </div>
                 </div>
-                <div class="columns">
-                    <h4>Opening Hours</h4>
-                    <p>Everyday</p>
-                    <p>10.00 Am -10.00 Pm</p>
-                </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 All Rights Reserved By Free Html Templates</p>
-                <p>&copy; Distributed By ThemeWagon</p>
+
+            <div class="footer-info">
+                <p> © 2025 All Rights Reserved By Free Html Templates </p>
+                <p> © Distributed By ThemeWagon</p>
             </div>
         </div>
-      
-</footer>
+    </footer>
+
+
+
+
 
 
 
@@ -480,7 +517,7 @@
     </script>
 
 
-
+    <script src="function.js"></script>
 
 </body>
 
